@@ -322,7 +322,7 @@ Think step by step before answering.
 ### Reliable Output Techniques
 - Provide an explicit JSON schema template with dummy values
 - Explicitly prohibit conversational filler and markdown backticks when required
-- In Gemini, configure `response_mime_type="application/json"` for enforced schema compliance
+- In Gemini, configure `response_mime_type="application/json"` and `response_schema` for enforced schema compliance
 
 <!-- below-columns -->
 
@@ -421,8 +421,9 @@ A stakeholder insists: *“Our internal assistant must never answer ‘I do not 
 - Point the model to specific image coordinates or labeled sections for visual analysis
 
 ### Temperature Tuning
-- Use low temperature (`0.0 - 0.2`) for classification, extraction, and factual question answering
-- Use higher temperature (`0.7 - 1.0`) for creative ideation, writing variety, and marketing copy
+- Gemini temperature ranges from `0.0` to `2.0` (default is `1.0`)
+- Lower temperature (`0.0 - 0.3`) favors deterministic extraction and classification
+- Higher temperature (`1.0 - 1.5+`) increases variety for creative brainstorming
 
 ---
 
