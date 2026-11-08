@@ -38,9 +38,9 @@ Write a short status update about our project delay.
 4. Click the Submit button (or press Enter) to send your prompt.
 
 5. Review the generated response and identify the details that the model fabricated:
-- What project name or business domain did the model invent?
-- What technical or organizational reason did it provide for the delay?
-- What revised completion date did it commit to?
+  - What project name or business domain did the model invent?
+  - What technical or organizational reason did it provide for the delay?
+  - What revised completion date did it commit to?
 
 > [!NOTE]
 > Large language models are probabilistic next-token predictors. When you omit critical operational context, the model predicts completions based on general web training data rather than your actual business reality.
@@ -75,9 +75,9 @@ Constraints:
 3. Submit the prompt to Gemini.
 
 4. Inspect the output and verify that it adheres to every constraint:
-- The response opens immediately with the requested summary without conversational pleasantries.
-- Exactly three bullet points appear under the summary heading.
-- The metrics and schedule details appear in a properly formatted markdown table.
+  - The response opens immediately with the requested summary without conversational pleasantries.
+  - Exactly three bullet points appear under the summary heading.
+  - The metrics and schedule details appear in a properly formatted markdown table.
 
 > [!TIP]
 > Focus personas on specific professional functions, responsibilities, and evaluation criteria rather than theatrical or exaggerated titles.

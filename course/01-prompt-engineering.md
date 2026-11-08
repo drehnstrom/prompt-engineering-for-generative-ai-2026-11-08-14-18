@@ -115,7 +115,7 @@ Run this in Gemini before we examine how language models process instructions.
 
 ### Role and Persona
 - Establish domain expertise, perspective, and intended audience depth.
-- Directs the model toward specialized vocabulary and professional standards.
+- Direct the model toward specialized vocabulary and professional standards.
 
 ### Task and Objective
 - State the core action verb and end goal immediately.
@@ -413,7 +413,7 @@ A stakeholder insists: *“Our internal assistant must never answer ‘I do not 
 # Practical Tips for Google Gemini
 
 ### AI Studio vs Web App
-- Use Gemini web app for casual drafts, document interrogation, and brainstorming
+- Use the Gemini web app for casual drafts, document interrogation, and brainstorming
 - Use Google AI Studio to test system instructions, temperature, and structured JSON schemas
 
 ### Multimodal Context

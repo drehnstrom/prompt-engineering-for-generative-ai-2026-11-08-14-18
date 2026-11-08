@@ -23,7 +23,7 @@ Write a short status update about our project delay.
 ```
 
 #### Expected Model Behavior
-- The model invents a fictitious project name (such as "Project Titan" or "Website Redesign").
+- The model invents a fictitious project name (such as “Project Titan” or “Website Redesign”).
 - The model fabricates arbitrary delay causes (such as unexpected vendor issues or staffing shortages).
 - The model commits to an arbitrary revised deadline.
 - Confirms that when critical context is omitted, large language models predict generic completions from web training data.
@@ -158,7 +158,7 @@ Question: How long can an engineer remain connected to the corporate VPN before 
 An engineer can remain connected to the corporate VPN for up to 8 hours of continuous connection before the session automatically terminates and requires re-authentication using a physical hardware security key.
 ```
 
-#### Follow-up Query for Unmentioned Topic
+#### Follow-up Query for Ungrounded Topic
 ```text
 Question: What is the maximum monthly reimbursement amount for an employee's home internet service?
 ```
