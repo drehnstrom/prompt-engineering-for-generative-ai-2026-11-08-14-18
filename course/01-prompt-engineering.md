@@ -67,11 +67,12 @@ Run this in Gemini before we examine how language models process instructions.
 
 # How LLMs Process Prompts
 
-- **Tokens as building blocks**: models process text as token chunks (~4 characters or 0.75 words), not full sentences
-- **Next-token prediction**: models calculate the highest probability sequence of tokens following your input
-- **Attention mechanisms**: the model weighs connections between tokens across the entire prompt context
-- **Context window budget**: instructions, reference context, and conversation history share a fixed token limit
-- **Placement sensitivity**: models pay stronger attention to instructions at the beginning and end of a prompt
+- **Tokens as building blocks**: models process text in sub-word token chunks
+- **Attention mechanisms**: cross-token weights link words across the prompt context
+- **Next-token prediction**: models calculate probabilities for each successive token
+- **Context window budget**: prompt instructions and outputs share a finite token capacity
+
+![Token breakdown, multi-head attention weighting, and next-token probability distribution](images/ch01-token-prediction-flow.svg)
 
 > [!IMPORTANT]
 > If you leave a critical assumption unstated, the model will invent one based on general web training data rather than your specific reality.
@@ -271,14 +272,14 @@ Output:
 
 ---
 
+<!-- layout: stacked -->
 # Guiding Reasoning: Chain-of-Thought
 
-- **Ask for step-by-step reasoning**: models produce significantly fewer logical errors when calculating or deducing answers incrementally
-- **Explicit intermediate stages**: require the model to analyze evidence before drawing conclusions
-  - Step 1: Extract all dates and deadlines from the message
-  - Step 2: Compare each deadline against today’s date
-  - Step 3: Flag any conflicting milestones
-- **Suppressing scratchpad text**: if building for an API, instruct the model to reason internally or separate reasoning into a designated tag
+- Direct queries force the model to jump from input to final answer in a single token step
+- Chain-of-thought creates intermediate token steps, where each deduction conditions the next
+- Step-by-step reasoning sharply reduces arithmetic, deduction, and scheduling errors
+
+![Comparison between direct prompting leap and chain-of-thought intermediate deduction states](images/ch01-chain-of-thought-reasoning.svg)
 
 > [!NOTE]
 > Requesting step-by-step explanations consumes more output tokens and increases generation time, but delivers higher logical accuracy.
@@ -532,6 +533,7 @@ A support team wants Gemini to summarize customer complaint emails. Early tests 
 
 ---
 
+<!-- layout: stacked -->
 # Questions and Answers
 
-Questions?
+![Questions and Answers](images/qa.png)

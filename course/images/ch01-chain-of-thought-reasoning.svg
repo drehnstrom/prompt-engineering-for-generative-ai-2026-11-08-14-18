@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 230" role="img" aria-label="Comparison between direct prompting single leap and chain-of-thought intermediate deduction steps">
+  <defs>
+    <linearGradient id="cotGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1e71d6"/>
+      <stop offset="50%" stop-color="#6a55e4"/>
+      <stop offset="100%" stop-color="#bd35c2"/>
+    </linearGradient>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#1e71d6"/>
+    </marker>
+    <marker id="arrowPurple" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#6a55e4"/>
+    </marker>
+    <marker id="arrowMagenta" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#bd35c2"/>
+    </marker>
+  </defs>
+
+  <!-- Top Track: Direct Prompting -->
+  <text x="24" y="22" fill="#495f7a" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" letter-spacing="0.08em">DIRECT PROMPTING: ZERO INTERMEDIATE STEPS</text>
+
+  <rect x="24" y="34" width="154" height="42" rx="5" fill="#082445"/>
+  <text x="101" y="53" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Multi-Step Task</text>
+  <text x="101" y="68" text-anchor="middle" fill="#495f7a" font-family="Inter, system-ui, sans-serif" font-size="10">Multiple constraints</text>
+
+  <!-- Leap Arc -->
+  <path d="M 182 55 C 330 14, 470 14, 638 52" fill="none" stroke="#495f7a" stroke-width="2" stroke-dasharray="4,4"/>
+  <text x="410" y="28" text-anchor="middle" fill="#495f7a" font-family="Inter, system-ui, sans-serif" font-size="11">Single token prediction leaps across logical dependencies</text>
+
+  <rect x="642" y="34" width="154" height="42" rx="5" fill="none" stroke="#bd35c2" stroke-width="2"/>
+  <text x="719" y="53" text-anchor="middle" fill="#bd35c2" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="700">Flawed Output</text>
+  <text x="719" y="68" text-anchor="middle" fill="#495f7a" font-family="Inter, system-ui, sans-serif" font-size="10">Logic errors and skipped steps</text>
+
+  <!-- Bottom Track: Chain-of-Thought -->
+  <text x="24" y="116" fill="#495f7a" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" letter-spacing="0.08em">CHAIN-OF-THOUGHT: EXPLICIT INTERMEDIATE STATES</text>
+
+  <rect x="24" y="128" width="154" height="42" rx="5" fill="#082445"/>
+  <text x="101" y="147" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Multi-Step Task</text>
+  <text x="101" y="162" text-anchor="middle" fill="#495f7a" font-family="Inter, system-ui, sans-serif" font-size="10">Multiple constraints</text>
+
+  <line x1="182" y1="149" x2="208" y2="149" stroke="#1e71d6" stroke-width="2" marker-end="url(#arrowBlue)"/>
+
+  <rect x="214" y="128" width="118" height="42" rx="5" fill="#082445" stroke="#1e71d6" stroke-width="1.5"/>
+  <text x="273" y="146" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">Step 1: Extract</text>
+  <text x="273" y="161" text-anchor="middle" fill="#1e71d6" font-family="Inter, system-ui, sans-serif" font-size="10">Isolate variables</text>
+
+  <line x1="336" y1="149" x2="362" y2="149" stroke="#6a55e4" stroke-width="2" marker-end="url(#arrowPurple)"/>
+
+  <rect x="368" y="128" width="118" height="42" rx="5" fill="#082445" stroke="#6a55e4" stroke-width="1.5"/>
+  <text x="427" y="146" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">Step 2: Calculate</text>
+  <text x="427" y="161" text-anchor="middle" fill="#6a55e4" font-family="Inter, system-ui, sans-serif" font-size="10">Resolve buffers</text>
+
+  <line x1="490" y1="149" x2="516" y2="149" stroke="#bd35c2" stroke-width="2" marker-end="url(#arrowMagenta)"/>
+
+  <rect x="522" y="128" width="118" height="42" rx="5" fill="#082445" stroke="#bd35c2" stroke-width="1.5"/>
+  <text x="581" y="146" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">Step 3: Compare</text>
+  <text x="581" y="161" text-anchor="middle" fill="#bd35c2" font-family="Inter, system-ui, sans-serif" font-size="10">Test constraint</text>
+
+  <line x1="644" y1="149" x2="670" y2="149" stroke="#bd35c2" stroke-width="2" marker-end="url(#arrowMagenta)"/>
+
+  <rect x="676" y="128" width="120" height="42" rx="5" fill="url(#cotGrad)"/>
+  <text x="736" y="147" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="700">Verified Output</text>
+  <text x="736" y="162" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="10" opacity="0.9">Logically grounded</text>
+
+  <text x="410" y="202" text-anchor="middle" fill="#495f7a" font-family="Inter, system-ui, sans-serif" font-size="11">Each intermediate token sequence conditions subsequent next-token probability distributions</text>
+</svg>
