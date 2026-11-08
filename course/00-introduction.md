@@ -41,7 +41,9 @@
 <!-- layout: panel-right -->
 # Who Should Attend
 
-- Beginners, knowledge workers, and professionals looking to improve their productivity and output quality when working with generative AI tools.
+- Beginners and professionals seeking practical generative AI skills
+- Knowledge workers who want to automate drafting, summarizing, and data formatting
+- Anyone looking to get consistent, high-quality results from Google Gemini
 
 ![Who Should Attend](images/who-should-attend.png)
 
@@ -51,5 +53,7 @@
 # Prerequisites
 
 - Basic exposure to conversational generative AI tools
+- An active Google account to access Gemini
+- Familiarity with standard web browsers
 
 ![Prerequisites](images/prerequisites.png)

@@ -52,12 +52,26 @@ Prompt Engineering for Generative AI
 
 ---
 
+# Do Now: Test an Ambiguous Prompt
+
+Run this in Gemini before we examine how language models process instructions.
+
+- Open Gemini in your browser
+- Submit this single prompt: `Write a short status update about our project delay.`
+- Note what the model generated:
+  - What project name or domain did it invent?
+  - What reason did it give for the delay?
+  - What revised deadline did it commit to?
+
+---
+
 # How LLMs Process Prompts
 
+- **Tokens as building blocks**: models process text as token chunks (~4 characters or 0.75 words), not full sentences
 - **Next-token prediction**: models calculate the highest probability sequence of tokens following your input
-- **Attention mechanisms**: the model weighs connections between words across the entire prompt context
-- **Context window consumption**: instructions, background context, and prior turns compete for token budget
-- **Placement sensitivity**: models pay stronger attention to the beginning and end of a prompt than the middle
+- **Attention mechanisms**: the model weighs connections between tokens across the entire prompt context
+- **Context window budget**: instructions, reference context, and conversation history share a fixed token limit
+- **Placement sensitivity**: models pay stronger attention to instructions at the beginning and end of a prompt
 
 > [!IMPORTANT]
 > If you leave a critical assumption unstated, the model will invent one based on general web training data rather than your specific reality.
@@ -126,6 +140,19 @@ Prompt Engineering for Generative AI
 
 > [!TIP]
 > Use the formula: *“Act as an expert [Role]. Explain [Topic] to an audience of [Target Audience], emphasizing [Core Priority].”*
+
+---
+
+<!-- layout: 2-column -->
+# Discuss: When Does a Persona Backfire?
+
+### Prompt
+A colleague begins every prompt with: *“Act as an omniscient world-class genius with 30 years of experience who knows everything about technology.”*
+
+### Discuss
+- What useful constraint does that instruction actually provide?
+- How does that differ from naming a specific job function and audience?
+- When can an exaggerated persona degrade response quality?
 
 ---
 
@@ -258,6 +285,31 @@ Output:
 
 ---
 
+# Demo: Chain-of-Thought in Action
+
+Show how forcing intermediate reasoning steps prevents logical errors.
+
+```text
+Task: Determine if our team has enough conference room time.
+
+Context:
+- Team Alpha reserved Room 204 from 9:00 AM to 11:30 AM.
+- Team Beta needs 90 minutes starting at 11:00 AM.
+- Room turnover requires a 15-minute cleaning buffer between meetings.
+
+Instruction:
+Think step by step before answering.
+1. Identify when Team Alpha vacates the room.
+2. Add the required cleaning buffer to find the earliest available time.
+3. Compare that time against Team Beta’s requested start time.
+4. Conclude with a clear YES or NO.
+```
+
+- **Without steps**: models frequently answer “Yes”, conflating 11:00 AM with the 11:30 AM end time
+- **With steps**: the model calculates the 11:45 AM availability buffer and correctly concludes “No”
+
+---
+
 <!-- layout: 2-column -->
 # Enforcing Structured Outputs
 
@@ -327,6 +379,19 @@ Output:
 
 > [!IMPORTANT]
 > Large language models are reasoning and synthesis engines, not reliable corporate knowledge stores. Always supply source documents for proprietary facts.
+
+---
+
+<!-- layout: 2-column -->
+# Discuss: Handling the “I Don’t Know” Dilemma
+
+### Prompt
+A stakeholder insists: *“Our internal assistant must never answer ‘I do not know.’ It should always provide helpful guidance, even if the policy does not explicitly mention the topic.”*
+
+### Discuss
+- What risk does this requirement introduce into the system?
+- Why do language models invent details when refusal is prohibited?
+- How can you design a safe fallback that helps the user without fabricating facts?
 
 ---
 
